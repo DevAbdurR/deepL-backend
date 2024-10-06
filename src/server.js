@@ -11,6 +11,7 @@ app.post("/translate", async (req, res) => {
     const params = new URLSearchParams();
     params.append("text", text);
     params.append("target_lang", targetLanguage);
+    params.append("tag_handling", "html");
 
     const response = await fetch("https://api.deepl.com/v2/translate", {
       method: "POST",
